@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/1.css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="iconfont/demo.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .er{
+            width:200px;
+            height:30px;
+            text-align:center;
+            line-height:30px;
+            color:#A6A6A6;
+            font-size:15px;
+        }
+        .first{
+            width:200px;
+            height:50px;
+            text-align:center;
+            line-height:50px;
+            color:#474747;
+
+        }
+        .first:hover{
+            background-color:#FF6577;
+        }
+
+        i{
+            color:#333333;
+        }
+        i:hover{
+            color:white;
+        }
+    </style>
+</head>
+<body ng-controller="Aaa1">
+
+
+<header class="q1">
+    <div><img ng-src="img/{{tu1}}" alt=""></div>
+    <div>
+        <img ng-src="img/{{tu2}}" alt=""><span>{{zi1}}</span>
+        <img ng-src="img/{{tu3}}" alt="">
+    </div>
+</header>
+
+
+<div class="q2" ng-controller="Aaa1">
+
+    <footer class="ly">
+            <ul class="lists">
+                <li class="first" ui-sref="aaa"><i class="icon iconfont"></i> &nbsp;店铺管理&nbsp;<i class="icon iconfont"></i></li>
+                <li class="er"  ui-sref="yi">商户信息</li>
+                <li class="er"  ui-sref="er">商家作品</li>
+                <li class="er"  ui-sref="san">套系管理</li>
+            </ul>
+
+            <ul>
+                <li class="first" ui-sref="bbb"><i class="icon iconfont"></i>&nbsp;服务管理&nbsp;<i class="icon iconfont"></i></li>
+                <li class="er" ui-sref="qi">所有订单</li>
+                <li class="er" style="text-align: center">摄影未排期</li>
+                <li class="er">试衣排期</li>
+                <li class="er">选片排期</li>
+                <li class="er">定稿排期</li>
+                <li class="er">取件排期</li>
+                <li class="er">待取件排期</li>
+                <li class="er">已完成订单</li>
+                <li class="er" ui-sref="ba">已退单</li>
+                <li class="er" ui-sref="liu">数据备份</li>
+            </ul>
+
+            <ul >
+                <li class="first" ui-sref="ccc"><i class="icon iconfont"></i>&nbsp;客片管理&nbsp;<i class="icon iconfont"></i></li>
+            </ul>
+            <ul>
+                 <li class="first" ui-sref="ddd"><i class="icon iconfont"></i>&nbsp;档期管理&nbsp;<i class="icon iconfont"></i></li>
+                 <li class="er" ui-sref="si">档期一览</li>
+                 <li class="er" id="oneweb" ui-sref="wu">档期明细</li>
+            </ul>
+
+
+            <ul>
+                <li class="first" ui-sref="eee"><i class="icon iconfont"></i>&nbsp;分享统计&nbsp;&nbsp;</li>
+            </ul>
+
+
+            <ul>
+                <li class="first" ui-sref="fff"><i class="icon iconfont"></i>&nbsp;潜客管理&nbsp;&nbsp;</li>
+            </ul>
+
+
+            <ul class="lists">
+                <li class="first" ui-sref="ggg"><i class="icon iconfont"></i>&nbsp;系统设置&nbsp;<i class="icon iconfont"></i></li>
+                <li class="er" ui-sref="shisi">用户管理</li>
+                <li class="er">部门&人员</li>
+                <li class="er">服务设置</li>
+                <li class="er">订单来源设置</li>
+                <li class="er">分享设置</li>
+                <li class="er">拍摄档期分类</li>
+                <li class="er">个人信息</li>
+            </ul>
+
+    </footer>
+
+<div  ui-view="" class="content"></div>
+
+
+
+</div>
+<div class="q3">{{zi2}}</div>
+<script>
+
+
+    $(".first").each(function () {
+
+        $(this).click(function (ev) {
+
+            ev.stopPropagation();
+
+            console.log($(this).nextAll(".er"));
+            $(this).nextAll(".er").slideToggle(1000);
+            $(this).css("color","white");
+//删除
+        });
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+
+<script src="js/angular-1.4.6.min.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="app.js"></script>
+
+<script src="router/router.js"></script>
+<script src="controller/1.js"></script>
+</html>
+
+
+
+
